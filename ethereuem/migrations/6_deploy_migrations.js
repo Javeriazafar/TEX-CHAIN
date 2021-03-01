@@ -1,11 +1,11 @@
-const AdminUser = artifacts.require("AdminUser");
+const Manufacturer = artifacts.require("Manufacturer");
 const fs =require('fs')
 const path= require('path')
 module.exports = function (deployer) {
-  deployer.deploy(AdminUser,{from:"0x53fe80034db699cb19663e8a7d9abab1e64e7f0c"}).then(() => {
+  deployer.deploy(Manufacturer,{from:"0x9576AA3eBCE42732cc94cc8Fede9fb0850ccc27F"}).then(() => {
     fs.writeFile(
       __dirname + path,
-      'const ADDRESS = ' + "'" + AdminUser.address + "';",
+      'const ADDRESS = ' + "'" + Manufacturer.address + "';",
       (err) => {
         if (err) {
           console.log(err)
@@ -15,7 +15,7 @@ module.exports = function (deployer) {
     )
     fs.appendFile(
       __dirname + path,
-      '\nconst ABI = ' + JSON.stringify(AdminUser.abi) + ';',
+      '\nconst ABI = ' + JSON.stringify(Manufacturer.abi) + ';',
       (err) => {
         if (err) {
           console.log(err)

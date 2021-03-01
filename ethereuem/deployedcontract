@@ -1,3 +1,39 @@
+Truffle Develop started at http://127.0.0.1:9545/
+truffle migrate -f 2 --to 2
+
+Accounts:
+(0) 0x4d8fa3d7c653907efcb9a24fc5029db9909fcd99
+(1) 0x18e02749dc7961dcbaf818675cf2ad72fa967939
+(2) 0x77e0dc0d3e0561b561522b336d56bdafefeca140
+(3) 0xb249875b96cf47bb169e7efb499051760be4a5a6
+(4) 0x826cf24aa505f1cd6656c7dc9e0fc019877f14b3
+(5) 0x996abc7de9d1e642513802a7a5ce10655eb000ac
+(6) 0xcfbe2f14889b8b5ed3c706d450d82ef70d476f03
+(7) 0xfaba40417ca2dc0a4e417c11e55ae69fbfa8cfb8
+(8) 0x4560612adc947170187121f2e52d8e17abae6a47
+(9) 0xc51b598a05c573e5cc41074adaedf5947dd2dba7
+
+Private Keys:
+(0) 0d1c5f8355b197b68f1eefd87737c0419e6cf92a3fda9bae6c41f9b02a2cbd94
+(1) 98f36fd22a0eebe7510f5e65c690c3f2a180cdbebaac2d154ee0c75c883f1a1f
+(2) e917b0232f681bc7a702d1f16b748e99c23a2931daedf81a13159335689d6f70
+(3) 8f404626182628117146267dc9ba7ebb38e8e72635bb516107f9643f2f41159c
+(4) ce6e4ec29e2ecc38c3ff3f50eec68237122f4a9030cfe64b5ebb6267b5a85354
+(5) 18f353253abdd27af52e76e46ec8945bd9dc547c62300f6e122a6564315d7901
+(6) b5666ba9853ef08b9a93a43450b75ec5ac58c8474ba074b07b33de0c8f15af53
+(7) 08e0264dd2b2c4ab226ef6c6d49d84e736471cb5fb7cdffcf00cb5dc81063c35
+(8) c701d8c947c31102144f7ec962a9c233b8218cd928ad41e63f360c1fb522b04b
+(9) f71f41124973932fbb462b15511168cc9d7dc1a3b329e67d88df36aa8efb6927
+
+Mnemonic: pilot depart bag primary zoo remain poverty afford dentist normal warfare pioneer
+
+⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
+Ensure you do not use it on production blockchains, or else you risk losing funds.
+
+
+
+
+
 truffle migrate --reset
 
 Compiling your contracts...
@@ -8,9 +44,9 @@ Compiling your contracts...
 
 Starting migrations...
 ======================
-> Network name:    'development'
-> Network id:      1611400388646
-> Block gas limit: 6721975 (0x6691b7)      
+> Network name:    'develop'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
 
 
 1_initial_migration.js
@@ -18,52 +54,112 @@ Starting migrations...
 
    Deploying 'Migrations'
    ----------------------
-   > transaction hash:    0x41447dbec0e55aafde3992c5698eef63b54e2e5c8ed1ed2159f7e79db6660c1c
-   > Blocks: 0            Seconds: 0       
-   > contract address:    0x73ACc51073938ED5d58fB8Aa83bef5c91B829423
-   > block number:        64
-   > block timestamp:     1611406205       
-   > account:             0x7104C070DaF82F9BE9e20CEfd7C9A678822B5Fd6
-   > balance:             99.51689574      
-   > gas used:            191943 (0x2edc7) 
+   > transaction hash:    0x83bf4ef852680d17c9d05088c78e6ac847e20973d03d88d157e7ab252c44dce3
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x50F65Ac2F188655122E834a27FAD7f6781F90055
+   > block number:        1
+   > block timestamp:     1613760414
+   > account:             0x4D8Fa3D7c653907efCB9A24fc5029Db9909fcd99
+   > balance:             99.99616114
+   > gas used:            191943 (0x2edc7)
    > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.00383886 ETH   
+   > total cost:          0.00383886 ETH
 
 
    > Saving migration to chain.
    > Saving artifacts
-   -------------------------------------   
-   > Total cost:          0.00383886 ETH   
+   -------------------------------------
+   > Total cost:          0.00383886 ETH
+
 
 
 2_deploy_migrations.js
 ======================
 
-   Deploying 'AdminUser'
+   Replacing 'AdminUser'
    ---------------------
-   > transaction hash:    0x4994edef8816cd2443494d87417c4d195775c05da9663bc8147b4db027c5c622
-   > Blocks: 0            Seconds: 0       
-   > contract address:    0xedAFDc4DD016A2427E58Eb8Fc40A0aFd135A3fAc
-   > block number:        66
-   > block timestamp:     1611406206       
-   > account:             0x7104C070DaF82F9BE9e20CEfd7C9A678822B5Fd6
-   > balance:             99.4912931       
-   > gas used:            1237794 (0x12e322)
+   > block number:        8151652
+   > block timestamp:     1614504352
+   > account:             0x53fe80034dB699cb19663e8a7d9ABaB1e64E7f0C
+   > balance:             18.698300834
+   > gas used:            1751891 (0x1abb53)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.003503782 ETH
+
+   -------------------------------------
+   > Total cost:         0.003503782 ETH
+
+
+3_deploy_migrations.js
+======================
+
+   Replacing 'Supplier'
+   --------------------
+   > block number:        8151654
+   > block timestamp:     1614504395
+   > account:             0xbc792347D9e5D4252fa5CB630CDCE0b337EFc45b
+   > balance:             18.698434894
+   > gas used:            343100 (0x53c3c)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0006862 ETH
+
+   -------------------------------------
+   > Total cost:           0.0006862 ETH
+
+
+
+
+4_deploy_migrations.js
+======================
+
+   Replacing 'Supplychain'
+   -----------------------
+   > transaction hash:    0x5c00f0e8dd5cb3bdb2e5ac8bc1866bc06bb5d2d72ceccc06793ec13d2e4c1263
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x7C2b5Ec2C0460F3d6c4fCb4b6b3DA10bD44D2538
+   > block number:        8106904
+   > block timestamp:     1613832571
+   > account:             0xbc792347D9e5D4252fa5CB630CDCE0b337EFc45b
+   > balance:             18.699173616
+   > gas used:            933143 (0xe3d17)
    > gas price:           20 gwei
-   > total cost:          0.02475588 ETH   
+   > value sent:          0 ETH
+   > total cost:          0.01866286 ETH
 
-
-   > Saving migration to chain.
    > Saving artifacts
-   -------------------------------------   
-   > Total cost:          0.02475588 ETH   
+   -------------------------------------
+   > Total cost:          0.01866286 ETH
+
+
+5_deploy_migrations.js
+======================
+
+   Replacing 'Roles'
+   -----------------
+   > transaction hash:    0x3a2a39c6a81fee86840427080b7568bf59b7a4f05e5856c378f27c2acb10d7c9
+   > Blocks: 1            Seconds: 5
+   > contract address:    0xCd68D97aBAD8eD3Ef263A1FB15876D91dcfc33d8
+   > block number:        8106905
+   > block timestamp:     1613832586
+   > account:             0x53fe80034dB699cb19663e8a7d9ABaB1e64E7f0C
+   > balance:             18.706325031
+   > gas used:            71714 (0x11822)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00143428 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00143428 ETH
 
 
 Summary
 =======
-> Total deployments:   2
-> Final cost:          0.02859474 ETH      
+> Total deployments:   4
+> Final cost:          0.0629684 ETH
 
 
 PS E:\nodeweb3\ethereuem> truffle migrate --network development

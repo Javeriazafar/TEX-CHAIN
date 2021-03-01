@@ -18,11 +18,11 @@
  *
  */
 
- //const HDWalletProvider = require('@truffle/hdwallet-provider');
- //const infuraKey = "https://rinkeby.infura.io/v3/45e588c887e84351a4a1c6ae1cffd1f1";
+ const HDWalletProvider = require('@truffle/hdwallet-provider');
+ const infuraKey =  'https://rinkeby.infura.io/v3/10cfdc60e2c841e4b03a5adf4abae931' ;
 
  //const fs = require('fs');
- //const mnemonic = fs.readFileSync(".secret").toString().trim();
+ const mnemonic = "ribbon recipe fame lady brain elder peasant filter chunk danger fossil cloud";
 
 module.exports = {
   /**
@@ -47,7 +47,7 @@ module.exports = {
       port: 8545,            // Standard Ethereum port (default: none)
       network_id: "*" ,
          // Any network (default: none)
-     }
+     },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -67,6 +67,13 @@ module.exports = {
     // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
+    
+      rinkeby: {
+        provider: function() {
+          return new HDWalletProvider(mnemonic,infuraKey);
+        },
+        network_id: 4
+      }
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
