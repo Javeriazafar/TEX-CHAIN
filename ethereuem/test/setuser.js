@@ -1,4 +1,6 @@
 const AdminUser = require('../contracts/AdminUserartufact');
+const EventEmitter = require('events');
+const myEmitter = new EventEmitter();
 const{abi,bytecode}= AdminUser;
 const ganache = require('ganache-cli');
 const assert = require('assert');
@@ -55,26 +57,61 @@ before("contract", async () => {
     user_contract = new web3.eth.Contract(
         JSON.parse(abi),
          '0x796D553883BC23Cc823257F9aE61835C4cdE48B1' );
-    console.log(accounts)
+         
+        // console.log(user_contract);
+    
 })
 
 describe('contract',()=>{
     it('should register a new user', async () => {
 
         let balance= await web3.eth.getBalance(accounts[0]);
-        console.log(user_contract._address);
+        
         assert.ok(user_contract._address);
     })
     it('create item',async()=>{
         acc1= accounts[1];
             campaign= await user_contract.methods.authorizeCaller(accounts[1]).send({
                 from: accounts[0], gas:'1000000'
-            }).then(receipt=> {console.log(receipt)});
-            assert.strictEqual(user_contract.methods.isUser(acc1),'true')
+            })
+            
     })
     it('owner',async ()=>{
-        owner=accounts[0];
-        campaign= await user_contract.methods.isOwner().call();
-        assert.strictEqual(lastaccess,owner)
+        campaign = await user_contract.methods.setUser('0xF23648620a401070C38086dAa0B1D02696F9f6A5','javeria','9238932582','jajzaE#r3','location',4)
+        .send({
+            from: accounts[0], gas:'1000000'
+        }).then(reciept=>{console.log(reciept.TransactionError)});
+            
+            //assert.strictEqual(receipt.logs.length, 1, "Should have emitted an event");
+            
+        //   const logger= await  user_contract.getPastEvents('LogNewUser', {
+        //         fromBlock: 0,
+        //         toBlock:'latest'
+
+        //     });
+        //     console.log(logger)
+
+            // var subscription = web3.eth.subscribe('logs', {address:accounts[0],topics:[]},function(error, result){
+               
+            //     if (!error)
+            //         console.log(result);
+            // })
+            // .on("data", function(transaction){
+            //     console.log(transaction);
+            // });
+            // subscription.unsubscribe(function(error, success){
+            //     if(success)
+            //         console.log('Successfully unsubscribed!');
+            // });
+        // const tx='0xe862b9774a0a70569d9fdc082ffc6c787a16650ded4c6c5562acf73fd2838030';
+//   const receipt =  await web3.eth.getTransactionReceipt(tx);
+        
+//         console.log(receipt)
+    const log= await  user_contract.events.LogNewUser()
+      console.log(log);
+
+        
+       
+        
     })
 })

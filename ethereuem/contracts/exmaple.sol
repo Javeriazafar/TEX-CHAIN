@@ -53,7 +53,7 @@ pragma solidity >=0.4.20;
         event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
         event AuthorizedCaller(address caller);
         event DeAuthorizedCaller(address caller);
-        event LogNewUser   (address indexed _userAddress, uint index,string  name, string password,  string email, uint userrole);
+        event LogNewUser   (address indexed _userAddress, uint index,string  name, string password,string email,uint userrole,bytes32 _hash);
         event LogUpdateUser(address indexed _userAddress, uint index,  string email, string location, string password);
         event ProduceByFarmer(uint upc);         //1
 
@@ -103,7 +103,7 @@ pragma solidity >=0.4.20;
         }
         
      
-        function setUser(address _userAddress, string memory us_name, string memory password, string memory  email, string memory location,uint   role) public Onlyowner returns(bytes32 _a,uint index) {
+        function setUser(address _userAddress, string memory us_name, string memory password, string memory  email, string memory location,uint role) public Onlyowner returns(uint index) {
             //require(authorizedCaller[msg.sender]==1);
             //authorizedCaller[msg.sender] = 0;
             //require(authorizedCaller[msg.sender]==0);
@@ -130,10 +130,11 @@ pragma solidity >=0.4.20;
             us_name,
             password,
             email, 
-            us_role[_userAddress]
+            us_role[_userAddress],
+            a
             );
             
-             return (a,userindex.length-1);
+             return (userindex.length-1);
         }
          function getUserCount() public view returns(uint index) {
             return userindex.length;
