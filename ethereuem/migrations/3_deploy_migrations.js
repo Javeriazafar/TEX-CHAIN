@@ -1,11 +1,11 @@
-const Supplier = artifacts.require("Supplier");
-const fs =require('fs')
-const path= require('path')
+const Supplychain = artifacts.require("Supplychain");
+const fs =require('fs');
+const path= require('path');
 module.exports = function (deployer) {
-  deployer.deploy(Supplier,{from:"0xbc792347D9e5D4252fa5CB630CDCE0b337EFc45b"}).then(() => {
+  deployer.deploy(Supplychain,{from:"0x53fe80034dB699cb19663e8a7d9ABaB1e64E7f0C"}).then(() => {
     fs.writeFile(
       __dirname + path,
-      'const ADDRESS = ' + "'" + Supplier.address + "';",
+      'const ADDRESS = ' + "'" + Supplychain.address + "';",
       (err) => {
         if (err) {
           console.log(err)
@@ -15,7 +15,7 @@ module.exports = function (deployer) {
     )
     fs.appendFile(
       __dirname + path,
-      '\nconst ABI = ' + JSON.stringify(Supplier.abi) + ';',
+      '\nconst ABI = ' + JSON.stringify(Supplychain.abi) + ';',
       (err) => {
         if (err) {
           console.log(err)
